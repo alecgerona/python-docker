@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-use_tag="alecgerona/uvicorn-gunicorn:$NAME"
+use_tag="alecgerona/python-docker:$NAME"
 
 DOCKERFILE="$NAME"
 
