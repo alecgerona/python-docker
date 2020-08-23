@@ -1,0 +1,31 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        image:
+          - name: python3.8-slim
+            python_version: "3.8"
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.8"
+      - name: Install Dependencies
+        run: python3.8 -m pip install docker pytest
+      - name: Deploy Image
+        run: bash scripts/build-push.sh
+        env:
+          NAME: ${{ matrix.image.name }}
+          DOCKERFILE: ${{ matrix.image.dockerfile }}
+          PYTHON_VERSION: ${{ matrix.image.python_version }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
