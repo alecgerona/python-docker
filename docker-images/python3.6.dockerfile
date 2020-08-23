@@ -4,7 +4,7 @@ LABEL maintainer="Alexandre Gerona <alecgerona@gmail.com>"
 
 # The following are taken from: https://github.com/docker-library/docker/blob/7a67842e7ff12c1426ae6a67ac1b7a701b51f3df/19.03/Dockerfile
 
-RUN apk add --no-cache \
+RUN apt-get --no-cache \
 		ca-certificates \
 # DOCKER_HOST=ssh://... -- https://github.com/docker/cli/pull/1014
 		openssh-client
