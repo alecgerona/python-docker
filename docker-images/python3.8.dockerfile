@@ -4,10 +4,7 @@ LABEL maintainer="Alexandre Gerona <alecgerona@gmail.com>"
 
 # The following are taken from: https://github.com/docker-library/docker/blob/7a67842e7ff12c1426ae6a67ac1b7a701b51f3df/19.03/Dockerfile
 
-RUN apt-get \
-		ca-certificates \
-# DOCKER_HOST=ssh://... -- https://github.com/docker/cli/pull/1014
-		openssh-client
+RUN apt-get ca-certificates openssh-client
 
 # set up nsswitch.conf for Go's "netgo" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
