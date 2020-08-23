@@ -22,7 +22,7 @@ ENV DOCKER_VERSION 19.03.5
 RUN set -eux; \
 	\
 # this "case" statement is generated via "update.sh"
-	apkArch="$(apk --print-arch)"; \
+	apkArch="$(uname -m)"; \
 	case "$apkArch" in \
 # amd64
 		x86_64) dockerArch='x86_64' ;; \
