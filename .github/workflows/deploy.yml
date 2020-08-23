@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         image:
-          - name: python3.8-slim
+          - name: python3.8
             python_version: "3.8"
     runs-on: ubuntu-18.04
     steps:
