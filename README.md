@@ -1,7 +1,7 @@
 <!--suppress ALL -->
 <div align="center">
   <h1>Python with Docker image</h1>
-  <a href="https://github.com/alecgerona/python-docker"><img src="https://img.shields.io/github/workflow/status/alecgerona/python-docker/Deploy?style=for-the-badge" alt="gitlab ci"/></a>
+  <a href="https://github.com/alecgerona/python-docker/actions?query=workflow%3ADeploy"><img src="https://img.shields.io/github/workflow/status/alecgerona/python-docker/Deploy?style=for-the-badge" alt="gitlab ci"/></a>
   <a href="https://hub.docker.com/r/alecgerona/python-docker"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/alecgerona/python-docker?style=for-the-badge"></a>
 </div>
 
