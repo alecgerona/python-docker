@@ -8,4 +8,4 @@
 ## Python base image with built-in docker.
 
 The `dockerfile` is really simple and this is merely to clean up your CI/CD workflows a bit.
-Currently supports Python3.8.
+Currently supports >=Python3.6.
