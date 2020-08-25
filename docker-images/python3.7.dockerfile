@@ -60,6 +60,14 @@ ENV DOCKER_TLS_CERTDIR=/certs
 RUN mkdir /certs /certs/client && chmod 1777 /certs /certs/client
 # (doing both /certs and /certs/client so that if Docker does a "copy-up" into a volume defined on /certs/client, it will "do the right thing" by default in a way that still works for rootless users)
 
+ENV PACT_STUB_SERVER_VERSION 0.4.3
+RUN curl -L -o pact-stub-server.gz https://github.com/uglyog/pact-stub-server/releases/download/v$PACT_STUB_SERVER_VERSION/pact-stub-server-linux-x86_64-$PACT_STUB_SERVER_VERSION.gz
+RUN gunzip pact-stub-server.gz
+RUN chmod +x pact-stub-server
+
+RUN pact-stub-server --help
+
+
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["sh"]
