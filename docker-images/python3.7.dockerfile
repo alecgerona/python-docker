@@ -62,10 +62,12 @@ RUN mkdir /certs /certs/client && chmod 1777 /certs /certs/client
 
 ENV PACT_VERSION 1.88.3
 RUN wget -O pact.tar.gz "https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v${PACT_VERSION}/pact-${PACT_VERSION}-linux-x86.tar.gz"
-RUN tar --extract --file pact.tar.gz --strip-components 2 --directory /usr/local/bin/
+RUN tar --extract --file pact.tar.gz
+RUN cp -a pact/bin/. /usr/local/bin/
+RUN cp -a pact/lib/. /usr/local/lib/
 
 RUN rm pact.tar.gz
-RUN pact-stub-server --help
+RUN pact-stub-service --help
 
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
