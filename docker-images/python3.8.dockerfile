@@ -66,6 +66,7 @@ RUN wget -O pact.tar.gz "https://github.com/pact-foundation/pact-ruby-standalone
 RUN tar --extract --file pact.tar.gz
 
 RUN rm pact.tar.gz
+RUN ./pact/lib/ruby/bin.real/ruby
 RUN ./pact/bin/pact-stub-service --help
 
 
