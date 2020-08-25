@@ -61,5 +61,9 @@ ENV DOCKER_TLS_CERTDIR=/certs
 RUN mkdir /certs /certs/client && chmod 1777 /certs /certs/client
 # (doing both /certs and /certs/client so that if Docker does a "copy-up" into a volume defined on /certs/client, it will "do the right thing" by default in a way that still works for rootless users)
 
+RUN wget https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v1.88.3/pact-1.88.3-linux-x86.tar.gz
+RUN tar -xvf pact-1.88.3-linux-x86.tar.gz
+COPY pact .
+
 ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["sh"]
