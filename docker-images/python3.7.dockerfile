@@ -61,7 +61,7 @@ RUN mkdir /certs /certs/client && chmod 1777 /certs /certs/client
 # (doing both /certs and /certs/client so that if Docker does a "copy-up" into a volume defined on /certs/client, it will "do the right thing" by default in a way that still works for rootless users)
 
 ENV PACT_VERSION 1.88.3
-RUN wget -O "pact.tar.gz https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v${PACT_VERSION}/pact-${PACT_VERSION}-linux-x86.tar.gz"
+RUN wget -O pact.tar.gz "https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v${PACT_VERSION}/pact-${PACT_VERSION}-linux-x86.tar.gz"
 RUN tar --extract --file pact.tar.gz --strip-components 2 --directory /usr/local/bin/
 
 RUN rm pact.tar.gz
