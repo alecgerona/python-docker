@@ -65,6 +65,7 @@ ENV PACT_STUB_SERVER_VERSION 0.4.3
 RUN curl -L -o pact-stub-server.gz https://github.com/uglyog/pact-stub-server/releases/download/v$PACT_STUB_SERVER_VERSION/pact-stub-server-linux-x86_64-$PACT_STUB_SERVER_VERSION.gz
 RUN gunzip pact-stub-server.gz
 RUN chmod +x pact-stub-server
+RUN mv pact-stub-server /usr/local/bin/
 
 RUN pact-stub-server --help
 
