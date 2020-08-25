@@ -67,7 +67,6 @@ RUN tar --extract --file pact.tar.gz
 
 RUN rm pact.tar.gz
 RUN stat pact/lib/ruby/bin.real/ruby
-RUN sh pact/lib/ruby/bin.real/ruby
 RUN ./pact/bin/pact-stub-service --help
 
 
